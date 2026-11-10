@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#dde3fb">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+
+    <div class="stage">
+      <div class="board-wrap">
+        <svg class="grid-lines" viewBox="0 0 300 300" aria-hidden="true">
+          <path d="M100 18V282M200 18V282M18 100H282M18 200H282"/>
+        </svg>
+        <div id="board" class="board" aria-label="Spielfeld"></div>
+        <svg id="winline" class="winline" viewBox="0 0 300 300" aria-hidden="true">
+          <line x1="0" y1="0" x2="0" y2="0" pathLength="1"></line>
+        </svg>
+      </div>
+    </div>
+
+    <div class="side">
+    <header class="head">
+      <h1>Tic Tac Toe</h1>
+      <p>Drei in einer Reihe gewinnt.</p>
+    </header>
+
+    <section class="score" aria-label="Spielstand">
+      <div class="tile" id="tile-x">
+        <span class="who"><svg class="g x" viewBox="0 0 100 100" aria-hidden="true"><path d="M24 24L76 76M76 24L24 76"/></svg><span id="name-x">Du</span></span>
+        <strong id="score-x">0</strong>
+      </div>
+      <div class="tile draw">
+        <span class="who">Remis</span>
+        <strong id="score-draw">0</strong>
+      </div>
+      <div class="tile" id="tile-o">
+        <span class="who"><svg class="g o" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="28"/></svg><span id="name-o">Computer</span></span>
+        <strong id="score-o">0</strong>
+      </div>
+    </section>
+
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+
+
+    <section class="settings" aria-label="Einstellungen">
+      <div class="field">
+        <span class="label" id="lbl-mode">Gegner</span>
+        <div class="opts" role="group" aria-labelledby="lbl-mode" data-group="mode">
+          <button type="button" class="opt" data-value="bot" aria-pressed="true">Computer</button>
+          <button type="button" class="opt" data-value="pvp" aria-pressed="false">Zu zweit</button>
+        </div>
+      </div>
+
+      <div class="field" id="field-difficulty">
+        <span class="label" id="lbl-diff">Schwierigkeit</span>
+        <div class="opts" role="group" aria-labelledby="lbl-diff" data-group="difficulty">
+          <button type="button" class="opt" data-value="easy" aria-pressed="false">Leicht</button>
+          <button type="button" class="opt" data-value="medium" aria-pressed="true">Mittel</button>
+          <button type="button" class="opt" data-value="hard" aria-pressed="false">Schwer</button>
+          <button type="button" class="opt" data-value="impossible" aria-pressed="false">Unbesiegbar</button>
+        </div>
+      </div>
+
+      <div class="field" id="field-symbol">
+        <span class="label" id="lbl-symbol">Dein Zeichen</span>
+        <div class="opts" role="group" aria-labelledby="lbl-symbol" data-group="symbol">
+          <button type="button" class="opt" data-value="X" aria-pressed="true">X, du beginnst</button>
+          <button type="button" class="opt" data-value="O" aria-pressed="false">O, Computer beginnt</button>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button type="button" id="btn-again" class="btn"><span id="again-label">Neue Runde</span></button>
+        <button type="button" id="btn-reset" class="link">Punkte zurücksetzen</button>
+      </div>
+    </section>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
